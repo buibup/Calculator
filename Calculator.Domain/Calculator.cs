@@ -23,39 +23,30 @@ public class Calculator
 
     public int Calculate()
     {
+        var result = Calc(value1, value2, operator1);
+        result = Calc(result, value3, operator2);
+
+        return result;
+    }
+
+    private int Calc(int value1, int value2, string @operator)
+    {
         var result = 0;
-        if (operator1 == "+")
+        if (@operator == "+")
         {
             result = value1 + value2;
         }
-        else if (operator1 == "-")
+        else if (@operator == "-")
         {
             result = value1 - value2;
         }
-        else if (operator1 == "*")
+        else if (@operator == "*")
         {
             result = value1 * value2;
         }
-        else if (operator1 == "/")
+        else if (@operator == "/")
         {
             result = value1 / value2;
-        }
-
-        if (operator2 == "+")
-        {
-            result += value3;
-        }
-        else if (operator2 == "-")
-        {
-            result -= value3;
-        }
-        else if (operator2 == "*")
-        {
-            result *= value3;
-        }
-        else if (operator2 == "/")
-        {
-            result /= value3;
         }
 
         return result;
